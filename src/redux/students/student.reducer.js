@@ -16,6 +16,10 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
             return {
                 ...state, singleStudent:action.payload
             };
+        case StudentActionType.DELETE_STUDENT:
+            return {
+                ...state, allStudents:state.allStudents.filter(student=>student.id !==action.payload),
+            };
         default:
             return state;
     }

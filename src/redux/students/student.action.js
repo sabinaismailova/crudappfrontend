@@ -18,6 +18,15 @@ export const fetchSingleStudent = (payload)=>{
     };
 };
 
+export const deleteStudent = (payload) => {
+    console.log("DELETE STUDENT ACTION ACTIVE");
+    return {
+        type: StudentActionType.DELETE_STUDENT,
+        payload: payload,
+    };
+
+};
+
 export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
@@ -39,6 +48,19 @@ export const fetchSingleStudentThunk = (studentid) =>{
             const response = await axios.get(`http://localhost:8080/api/students/getStudentById/${studentid}`);
             console.log("FETCHSINGLESTUDENTSTHUNK COMPLETED");
             dispatch(fetchSingleStudent(response.data));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+};
+
+export const deleteStudentThunk = (studentid) => {
+    return async (dispatch) => {
+        try {
+            console.log("FETCHDELETESTUDENTTHUNK IS FIRING");
+            await axios.delete(`http://localhost:8080/api/students/removeStudentByID/${studentid}`);
+            console.log("FETECHDELETECAMPUSESTHUNK COMPLETED");
+            dispatch(deleteStudent(studentid));
         } catch (error) {
             console.error(error);
         }
