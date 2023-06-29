@@ -1,4 +1,4 @@
-import React from "react";;
+import React from "react";
 import { useDispatch } from "react-redux";
 import AddCampus from "../components/AddCampus";
 import { addCampusThunk } from "../redux/campus/campus.action";
