@@ -38,7 +38,13 @@ export const editCampus = (payload) => {
     };
 };
 
-
+export const addCampus = (payload) =>{
+    console.log("ADD CAMPUS ACTION ACTIVE");
+    return {
+        type: CampusActionType.ADD_CAMPUS,
+        payload:payload,
+    };
+};
 
 
 export const fetechAllCampusesThunk = () => {
@@ -94,6 +100,20 @@ export const editCampusThunk = (campus) => {
             dispatch(editCampus(response.data));
         } catch (error) {
             console.error(error);
+        }
+    };
+};
+
+export const addCampusThunk =(newCampus) =>{
+    return async (dispatch) => {
+        try {
+            console.log("ADDCAMPUSESTHUNK IS FIRING");
+            const response = await axios.post('http://localhost:8080/api/campuses/addCampus', newCampus);
+            console.log("ADDCAMPUSESTHUNK COMPLETED");
+            dispatch(addCampus(response.data));
+        } catch (error) {
+            console.error(error);
+            
         }
     };
 };
