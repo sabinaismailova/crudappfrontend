@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 //use to show all campus
 //06/28/2023: just add two button use to future modify
 
-function ListAllCampuses(campus) {
+function ListAllCampuses({campus}) {
     return (
         <div style={{
-            diplsy: 'flex',
+            diplay: 'flex',
             flexDirection: 'column',
             width: '45%',
             margin: '2.5%',
@@ -48,7 +48,7 @@ function ListAllCampuses(campus) {
 
                 </button>
 
-                <Link to={`${campus.id}`}>Edit</Link>
+                <Link to={`/${campus.id}`}>Edit</Link>
             </div>
 
 

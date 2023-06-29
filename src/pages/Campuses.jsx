@@ -5,7 +5,7 @@ import ListAllCampuses from '../components/ListAllCampuses';
 
 function Campuses() {
   const dispatch = useDispatch();
-  const allcampuses = useSelector(state => state.allcampuses);
+  const allcampuses = useSelector(state => state.campuses.allCampus);
   
   const fetechAllCampuses = ()=>{
 
