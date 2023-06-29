@@ -25,7 +25,7 @@ export const fetechAllCampusesThunk = () =>{
     return async (dispatch) =>{
         try{
             console.log("FETECHALLCAMPUSESTHUNK IS FIRING");
-            const response = await axios.get('http://localhost:8080/api/getAllCampuses');
+            const response = await axios.get('http://localhost:8080/api/campuses/getAllCampuses');
             console.log("FETECHALLCAMPUSESTHUNK COMPLETED");
             dispatch(fetechAllCampuses(response.data));
         }catch(error){
