@@ -66,7 +66,7 @@ export const fetechSingleCampusThunk = (campusid) => {
     return async (dispatch) => {
         try {
             console.log("FETECHsingleCAMPUSESTHUNK IS FIRING");
-            const response = await axios.get(`http://localhost:8080/api/campuses/getCampusByID/:${campusid}`);
+            const response = await axios.get(`http://localhost:8080/api/campuses/getCampusByID/${campusid}`);
             console.log("FETECHSINGLECAMPUSESTHUNK COMPLETED");
             dispatch(fetechSingleCampus(response.data));
         } catch (error) {
@@ -80,7 +80,7 @@ export const deleteCampusThunk = (campusid) => {
     return async (dispatch) => {
         try {
             console.log("FETECHDELETECAMPUSESTHUNK IS FIRING");
-            await axios.delete(`http://localhost:8080/api/campuses/removeCampus/:${campusid}`);
+            await axios.delete(`http://localhost:8080/api/campuses/removeCampusByID/${campusid}`);
             console.log("FETECHDELETECAMPUSESTHUNK COMPLETED");
             dispatch(deleteCampus(campusid));
         } catch (error) {

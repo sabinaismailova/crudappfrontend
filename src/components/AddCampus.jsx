@@ -21,7 +21,7 @@ const AddCampus = ({ onSubmit }) => {
     };
 
     return (
-        <from onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label>
                 Name:
                 <input type="text" name="name" value={newCampus.name} onChange={HandleInputChange} required/>
@@ -41,7 +41,7 @@ const AddCampus = ({ onSubmit }) => {
                 <textarea name="description" value={newCampus.description } onChange={HandleInputChange} />
             </label>
             <button type="submit">Add Campus</button>
-        </from>
+        </form>
     );
 };
 export default AddCampus;

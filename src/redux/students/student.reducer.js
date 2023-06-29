@@ -8,11 +8,11 @@ export const INITIAL_STUDENT_STATE = {
 
 //handle the action type
 const students = (state = INITIAL_STUDENT_STATE, action)=>{
-    console.log("STUDENTREDUCER IS HADLING FETECH ALL STUDENT ACTION");
+    console.log("STUDENTREDUCER IS HANDLING FETCH ALL STUDENT ACTION");
     switch (action.type) {
-        case StudentActionType.FETECH_ALL_STUDENT:
+        case StudentActionType.FETCH_ALL_STUDENTS:
             return {...state, allStudents:action.payload};
-        case StudentActionType.FETECH_SINGLE_STUDENT:
+        case StudentActionType.FETCH_SINGLE_STUDENTS:
             return {
                 ...state, singleStudent:action.payload
             };

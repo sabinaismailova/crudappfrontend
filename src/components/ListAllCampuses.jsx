@@ -13,7 +13,10 @@ function ListAllCampuses({campus}) {
     const dispatch = useDispatch();
 
     const HandleDelete = () =>{
+        console.log("Try to delete")
         dispatch(deleteCampusThunk(campus.id));
+        console.log(campus.id);
+        console.log("I have deleted")
     }
 
 
@@ -63,7 +66,7 @@ function ListAllCampuses({campus}) {
 
                 </button>
 
-                <Link to={`/${campus.id}`}>Edit</Link>
+                <Link to={`/campuses/edit/${campus.id}`}>Edit</Link>
             </div>
 
 
