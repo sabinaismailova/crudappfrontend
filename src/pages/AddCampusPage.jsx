@@ -10,7 +10,7 @@ const AddCampusPage = () =>{
         dispatch(addCampusThunk(campus));
     };
 
-    return <AddCampus onsubmit={handleSubmit} />
+    return <AddCampus onSubmit={handleSubmit} />
 };
 
 export default AddCampusPage;
