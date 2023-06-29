@@ -22,7 +22,7 @@ export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
             console.log("FETCHALLSTUDENTSTHUNK IS FIRING");
-            const response = await axios.get('http://localhost:8080/api/getAllStudents');
+            const response = await axios.get('http://localhost:8080/api/students/getAllStudents');
             console.log("FETCHALLSTUDENTSTHUNK COMPLETED");
             dispatch(fetchAllStudents(response.data));
         }catch(error){
@@ -36,7 +36,7 @@ export const fetchSingleStudentThunk = (studentid) =>{
     return async (dispatch)=>{
         try {
             console.log("FETCHSINGLESTUDENTSTHUNK IS FIRING");
-            const response = await axios.get(`http://localhost:8080/api/${studentid}`);
+            const response = await axios.get(`http://localhost:8080/api/students/${studentid}`);
             console.log("FETCHSINGLESTUDENTSTHUNK COMPLETED");
             dispatch(fetchSingleStudent(response.data));
         } catch (error) {

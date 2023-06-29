@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetechSingleCampusThunk } from "../redux/campus/campus.action";
-import { fetechAllStudentsThunk } from "../redux/students/student.action";
+import { fetchAllStudentsThunk } from "../redux/students/student.action";
 import ListSingleCampus from "../components/ListSingleCampus";
 import { useParams } from "react-router";
 
@@ -18,16 +18,16 @@ function SingleCampusPage(){
         return dispatch(fetechSingleCampusThunk(id));
     };
 
-    const fetechAllStudents = ()=>{
+    const fetchAllStudents = ()=>{
         console.log('RUNNING DISPATCH FROM FETECHALLSTUDENTS');
-        return dispatch(fetechAllStudentsThunk());
+        return dispatch(fetchAllStudentsThunk());
 
     };
 
     useEffect(()=>{
         console.log('FETCHING SINGLE CAMPUS AND ALL STUDENTS IN USE EFFECT');
         fetechSingleCampus();
-        fetechAllStudents();
+        fetchAllStudents();
 
 
     },[id]);
