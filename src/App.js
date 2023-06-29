@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./pages/Home";
 import Campuses from './pages/Campuses';
 import Students from './pages/Students';
+import SingleCampusPage from "./pages/SingleCampusPage";
 
 
 
@@ -16,7 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/campuses" element={<Campuses />} />
+        <Route path="/campuses/:id" element={<SingleCampusPage />} />
         <Route path="/students" element={<Students />} />
+        
       </Routes>
     </Router>
   );

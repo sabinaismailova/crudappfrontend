@@ -16,6 +16,11 @@ const campuses = (state = INITIAL_CAMPUS_STATE, action)=>{
             return {
                 ...state, singleCampus:action.payload
             };
+        case CampusActionType.DELETE_CAMPUS:
+            return {
+                ...state,
+                allCampus:state.allCampus.filter(campus=>campus.id !==action.payload),
+            };
 
         default:
             return state;

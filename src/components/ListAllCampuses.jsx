@@ -1,14 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteCampusThunk } from "../redux/campus/campus.action";
+
 
 //use to show all campus
 //06/28/2023: just add two button use to future modify
 
 function ListAllCampuses({campus}) {
+    
+    //use to handle the delete action
+    const dispatch = useDispatch();
+
+    const HandleDelete = () =>{
+        dispatch(deleteCampusThunk(campus.id));
+    }
+
+
     console.log('LIST ALLCAMPUSES COMPONENTS');
     return (
         <div style={{
-            diplay: 'flex',
+            display: 'flex',
             flexDirection: 'column',
             width: '45%',
             margin: '2.5%',
@@ -20,7 +32,7 @@ function ListAllCampuses({campus}) {
             <h2 style={{
                 textAlign: 'center',
             }}>
-                <Link to={`/${campus.id}`}>{campus.name}</Link>
+                <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
             </h2>
 
             <img src={campus.imageUrl} alt={campus.name} style={{
@@ -44,7 +56,9 @@ function ListAllCampuses({campus}) {
             <div>
                 <button style={{
                     marginRight:'10px'
-                }}>
+                    }}
+                       onClick={HandleDelete}
+                >
                    Delete 
 
                 </button>
