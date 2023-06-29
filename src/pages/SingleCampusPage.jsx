@@ -12,6 +12,7 @@ function SingleCampusPage(){
 
     //get the id from the url
     const { id } = useParams();
+    console.log(id);
 
     const fetechSingleCampus = ()=>{
         console.log('RUNNING DISPATCH FROM FETECHSINGLECAMPUS');
@@ -32,7 +33,8 @@ function SingleCampusPage(){
 
     },[id]);
 
-    const campusStudents = students.filter(student => student.campusid===parseInt(id));
+    const campusStudents = students.filter(student => student.campusId===parseInt(id));
+    console.log("CAMPUSES STUDENTS",campusStudents);
     return (
         <ListSingleCampus campus={campus} students={campusStudents} />
 
