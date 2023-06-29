@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 //06/28/2023: just add two button use to future modify
 
 function ListAllCampuses({campus}) {
+    console.log('LIST ALLCAMPUSES COMPONENTS');
     return (
         <div style={{
             diplay: 'flex',
