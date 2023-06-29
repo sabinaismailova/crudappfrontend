@@ -25,9 +25,20 @@ function SingleCampusPage(){
     };
 
     useEffect(()=>{
-        
+        console.log('FETCHING SINGLE CAMPUS AND ALL STUDENTS IN USE EFFECT');
+        fetechSingleCampus();
+        fetechAllStudents();
 
-    },[]);
+
+    },[id]);
+
+    const campusStudents = students.filter(student => student.campusid===parseInt(id));
+    return (
+        <ListSingleCampus campus={campus} students={campusStudents} />
+
+   );
 
 
 }
+
+export default SingleCampusPage;

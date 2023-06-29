@@ -20,7 +20,7 @@ function ListAllCampuses({campus}) {
             <h2 style={{
                 textAlign: 'center',
             }}>
-                <Link to={`/${campus.id}`}>{campus.name}</Link>
+                <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
             </h2>
 
             <img src={campus.imageUrl} alt={campus.name} style={{
