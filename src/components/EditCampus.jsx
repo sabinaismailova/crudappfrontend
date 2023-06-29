@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { editCampusThunk } from "../redux/campus/campus.action";
 
 const EditCampus = () => {
     const campus = useSelector((state) => state.campuses.singleCampus);
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [editForm, seteditForm] = useState({});
 
@@ -21,7 +21,7 @@ const EditCampus = () => {
         event.preventDefault();
         console.log('RUNNING DISPATCH FROM EDITCAMPUSTHUNK');
         dispatch(editCampusThunk(editForm));
-        history.push(`/campuses/${campus.id}`);
+        navigate(`/campuses/${campus.id}`);
     };
 
     const HandleInputChange = (event) => {

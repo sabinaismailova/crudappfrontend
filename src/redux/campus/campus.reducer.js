@@ -27,6 +27,11 @@ const campuses = (state = INITIAL_CAMPUS_STATE, action)=>{
                 allCampus: state.allCampus.map((campus) => (campus.id===action.payload.id ? action.payload : campus)),
                 singleCampus:action.payload,
             };
+        case CampusActionType.ADD_CAMPUS:
+            return {
+                ...state,
+                allCampus:[...state.allCampus,action.payload],
+            };
 
         default:
             return state;
