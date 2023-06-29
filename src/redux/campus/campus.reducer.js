@@ -21,6 +21,12 @@ const campuses = (state = INITIAL_CAMPUS_STATE, action)=>{
                 ...state,
                 allCampus:state.allCampus.filter(campus=>campus.id !==action.payload),
             };
+        case CampusActionType.EDIT_CAMPUS:
+            return {
+                ...state,
+                allCampus: state.allCampus.map((campus) => (campus.id===action.payload.id ? action.payload : campus)),
+                singleCampus:action.payload,
+            };
 
         default:
             return state;
