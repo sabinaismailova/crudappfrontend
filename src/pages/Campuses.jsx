@@ -25,9 +25,13 @@ function Campuses() {
       flexWrap: 'wrap',
       justifyContent:'space-between'
     }}>
-      {allcampuses.map(campus =>(
+
+      {allcampuses.length>0 ? allcampuses.map(campus =>(
         <ListAllCampuses key={campus.id} campus={campus} />
-      ))}
+      )) : <p>
+           There are no campus resgerted in the database!
+          </p>
+        }
       
     </div>
   );
