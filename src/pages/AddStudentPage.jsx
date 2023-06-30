@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import AddStudent from "../components/AddStudent";
+import AddStudent from "../components/forms/AddStudent";
 import { addStudentThunk } from "../redux/students/student.action";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
