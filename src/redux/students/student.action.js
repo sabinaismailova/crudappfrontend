@@ -35,6 +35,14 @@ export const editStudent = (payload) => {
     };
 };
 
+export const addStudent = (payload) =>{
+    console.log("ADD STUDENT ACTION ACTIVE");
+    return {
+        type: StudentActionType.ADD_STUDENT,
+        payload:payload,
+    };
+};
+
 export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
@@ -85,6 +93,20 @@ export const editStudentThunk = (student) => {
             console.log("Edit Student Data: ", response.data);
         } catch (error) {
             console.error(error);
+        }
+    };
+};
+
+export const addStudentThunk =(newStudent) =>{
+    return async (dispatch) => {
+        try {
+            console.log("ADDSTUDENTTHUNK IS FIRING");
+            const response = await axios.post('http://localhost:8080/api/students/addStudent', newStudent);
+            console.log("ADDSTUDENTTHUNK COMPLETED");
+            dispatch(addStudent(response.data));
+        } catch (error) {
+            console.error(error);
+            
         }
     };
 };

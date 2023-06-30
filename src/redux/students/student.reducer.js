@@ -26,6 +26,11 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
                 allStudents:state.allStudents.map((student)=>(student.id===action.payload.id? action.payload:student)),
                 singleStudent:action.payload,
             };
+        case StudentActionType.ADD_STUDENT:
+            return {
+                ...state,
+                allStudents:[...state.allStudents, action.payload],
+            };
         default:
             return state;
     }

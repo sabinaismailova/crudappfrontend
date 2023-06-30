@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllStudentsThunk } from '../redux/students/student.action';
 import ListAllStudents from '../components/ListAllStudents';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
 import Footer from "../components/footer/Footer";
 
@@ -29,7 +30,7 @@ function Students() {
       <Navbar />
       <div>
         <h1>All Students</h1>
-        <button>Add Student</button>
+        <Link to="/students/add"><button>Add Student</button></Link>
       </div>
       {
         //div holding all cards with student name and campus

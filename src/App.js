@@ -8,6 +8,7 @@ import EditCampusPage from "./pages/EditCampusPage";
 import AddCampusPage from "./pages/AddCampusPage";
 import SingleStudentPage from "./pages/SingleStudentPage";
 import EditStudentPage from "./pages/EditStudentPage";
+import AddStudentPage from "./pages/AddStudentPage";
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/students/:id" element={<SingleStudentPage />}/>
         <Route path="/students/edit/:id" element={<EditStudentPage />} />
+        <Route path="/students/add" element = {<AddStudentPage />}/>
       </Routes>
     </Router>
   );
