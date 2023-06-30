@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteCampusThunk } from "../redux/campus/campus.action";
-
+import './StyleListAllCampuses.css';
 
 //use to show all campus
 //06/28/2023: just add two button use to future modify
 
-function ListAllCampuses({campus}) {
-    
+function ListAllCampuses({ campus }) {
+
     //use to handle the delete action
     const dispatch = useDispatch();
 
-    const HandleDelete = () =>{
+    const HandleDelete = () => {
         console.log("Try to delete")
         dispatch(deleteCampusThunk(campus.id));
         console.log(campus.id);
@@ -22,48 +22,20 @@ function ListAllCampuses({campus}) {
 
     console.log('LIST ALLCAMPUSES COMPONENTS');
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '40%',
-            margin: '2.5%',
-            padding: '10px',
-            border: '1px solid black',
-            borderRadius: '5PX'
-        }
-        }>
-            <h2 style={{
-                textAlign: 'center',
-            }}>
+        <div className="campus_container">
+            <h2 className="campus_title">
                 <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
             </h2>
 
-            <img src={campus.imageUrl} alt={campus.name} style={{
-                height: '150px',
-                objectFit: 'cover'
+            <img src={campus.imageUrl} alt={campus.name} className="campus_image" />
 
-            }} />
+            <p className="campus_description">{campus.description}</p>
 
-            <p style={{
-                flexGrow: 1
-            }}>
-                {campus.description}
-
-            </p>
-
-            <p>
-                {campus.address}
-
-            </p>
+            <p>{campus.address} </p>
 
             <div>
-                <button style={{
-                    marginRight:'10px'
-                    }}
-                       onClick={HandleDelete}
-                >
-                   Delete 
-
+                <button className="campus_delete" onClick={HandleDelete}>
+                    Delete
                 </button>
 
                 <Link to={`/campuses/edit/${campus.id}`}>Edit</Link>
