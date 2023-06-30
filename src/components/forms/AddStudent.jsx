@@ -60,6 +60,7 @@ function AddStudent({ onSubmit }) {
         <label>GPA: </label>
         <input
           type="number"
+          step="0.01"
           name="gpa"
           value={newStudent.gpa}
           min="0"
