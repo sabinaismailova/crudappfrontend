@@ -25,7 +25,7 @@ function ListAllCampuses({campus}) {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '45%',
+            width: '40%',
             margin: '2.5%',
             padding: '10px',
             border: '1px solid black',
