@@ -5,6 +5,7 @@ import { fetechAllCampusesThunk } from '../redux/campus/campus.action';
 import ListAllCampuses from '../components/ListAllCampuses';
 import Navbar from '../components/navbar/Navbar';
 import Footer from "../components/footer/Footer";
+import './StyleCampuses.css';
 
 function Campuses() {
   const dispatch = useDispatch();
@@ -23,35 +24,19 @@ function Campuses() {
   }, []);
 
   return (
-    <div>
+    <div className="campus_page">
       <Navbar />
-      <div style={{
-        textAlign:'center',
-      }}>
-      <h1>All Campuses List</h1>
+      <div className='title'>
+        <h1>All Campuses List</h1>
       </div>
-      <div style={{ 
-        margin: "10px 40px",
-        textAlign:'right',
-      }}>
+      <div className='campus_add'>
         <Link to="/campuses/add">
-          <button style={{
-            borderRadius:'10px',
-            backgroundColor:'gray',
-            width:'160px',
-            height:'30px'
-          }}>
+          <button className='add_Button'>
             Add Campus
           </button>
         </Link>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className='campuses_container'>
         {allcampuses.length > 0 ? (
           allcampuses.map((campus) => (
             <ListAllCampuses key={campus.id} campus={campus} />
@@ -60,9 +45,9 @@ function Campuses() {
           <p>There are no campus resgerted in the database!</p>
         )}
       </div>
-      
+
       <Footer />
-      
+
     </div>
   );
 }
