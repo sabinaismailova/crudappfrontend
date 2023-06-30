@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllStudentsThunk } from '../redux/students/student.action';
 import ListAllStudents from '../components/ListAllStudents';
 import Navbar from '../components/navbar/Navbar';
+import Footer from "../components/footer/Footer";
 
 function Students() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function Students() {
         }
 
       </div>
+      <Footer />
     </div>
   )
 }

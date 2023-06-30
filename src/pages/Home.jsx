@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/navbar/Navbar'
+import Footer from "../components/footer/Footer";
 function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ function Home() {
       // <br></br>
       // <Link to="/students">Go to Students</Link>
       }
+      <Footer />
     </div>
   )
 }

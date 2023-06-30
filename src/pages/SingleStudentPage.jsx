@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleStudentThunk } from "../redux/students/student.action";
 import ListSingleStudent from "../components/ListSingleStudent";
 import { useParams } from "react-router";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 function SingleStudentPage() {
   const student = useSelector(state => state.students.singleStudent);
@@ -23,8 +25,12 @@ function SingleStudentPage() {
 
 
   return (
-      <ListSingleStudent student={student}/>
-  )
+    <div>
+      <Navbar />
+      <ListSingleStudent student={student} />
+      <Footer />
+    </div>
+  );
 }
 
 export default SingleStudentPage
