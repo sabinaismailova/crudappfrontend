@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetechAllCampusesThunk } from '../redux/campus/campus.action';
-import ListAllCampuses from '../components/ListAllCampuses';
-import Navbar from '../components/navbar/Navbar';
-import Footer from "../components/footer/Footer";
+import { fetechAllCampusesThunk } from '../../redux/campus/campus.action';
+import ListAllCampuses from '../../components/ListAllCampuses/ListAllCampuses';
+import Navbar from '../../components/navbar/Navbar';
+import Footer from "../../components/footer/Footer";
 import './StyleCampuses.css';
 
 function Campuses() {

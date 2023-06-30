@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetechSingleCampusThunk } from "../redux/campus/campus.action";
 import { fetchAllStudentsThunk } from "../redux/students/student.action";
-import ListSingleCampus from "../components/ListSingleCampus";
+import ListSingleCampus from "../components/ListSingleCampus/ListSingleCampus";
 import { useParams } from "react-router";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
