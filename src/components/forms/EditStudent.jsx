@@ -63,7 +63,8 @@ function EditStudent() {
         />
         <label>GPA:</label>
         <input
-          type="float"
+           type="number"
+           step="0.01"
           name="gpa"
           min="0"
           max="4"
