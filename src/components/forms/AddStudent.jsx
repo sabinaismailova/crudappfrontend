@@ -5,7 +5,7 @@ function AddStudent({ onSubmit }) {
     firstName: "",
     lastName: "",
     email: "",
-    imageUrl: "",
+    imageUrl: "https://i.stack.imgur.com/l60Hf.png",
     gpa: "",
     campusId: "",
   });
