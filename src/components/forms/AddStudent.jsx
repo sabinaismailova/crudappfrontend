@@ -59,7 +59,7 @@ function AddStudent({ onSubmit }) {
         />
         <label>GPA: </label>
         <input
-          type="number"
+          type="float"
           name="gpa"
           value={newStudent.gpa}
           min="0"

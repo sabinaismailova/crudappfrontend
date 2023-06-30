@@ -63,8 +63,10 @@ function EditStudent() {
         />
         <label>GPA:</label>
         <input
-          type="number"
+          type="float"
           name="gpa"
+          min="0"
+          max="4"
           value={editForm.gpa || ""}
           onChange={handleInputChange}
         />
