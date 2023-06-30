@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { deleteStudentThunk } from '../redux/students/student.action'
+import { deleteStudentThunk } from '../../redux/students/student.action'
+import "./AllStudents.css"
 
 function ListAllStudents({student}) {
   const dispatch = useDispatch();
@@ -15,18 +16,17 @@ function ListAllStudents({student}) {
 
   return (
     <div>
-      <div style={{width:"160px", boxShadow:"0 4px 8px 0 rgba(0,0,0,0.2)", margin:"24px", textAlign: "center"}}>
-        <Link to={`./${student.id}`}>
-          <img src={student.imageUrl} alt="student_img" style={{width:"100%"}}/>
-          <div>
+      <div class="card">
+        <Link to={`./${student.id}`} class="text">
+          <div class="img-div">
+            <img class="fit" src={student.imageUrl} alt="student_img"/>
+          </div>
+          <div class="card-font">
               <h4><b>{student.firstName} {student.lastName}</b></h4>
-              {
-                //<p>{student.campusName}</p>
-              }
           </div>
         </Link>
-        <button onClick={handleDelete}>X</button>
-        <Link to={`/students/edit/${student.id}`}>Edit</Link>
+        <button class="del-btn" onClick={handleDelete}>X</button>
+        <Link to={`/students/edit/${student.id}`} class="text">Edit</Link>
       </div>
     </div>
   )

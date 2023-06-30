@@ -1,0 +1,59 @@
+.container {
+    display:flex; 
+    justify-content:center;
+    align-items:center;
+    margin-top:40px;
+}
+
+.header{
+    display:block;
+    text-align:center;
+    font-family:Verdana;
+    font-size:32px;
+    color: #333333;
+    text-shadow: 2px 2px 5px #5555558e;
+    margin:20px;
+}
+
+/* CSS */
+.add-btn {
+  background-color: #efefef;
+  border: 2px solid #333333;
+  border-radius: 30px;
+  box-shadow: #333333 4px 4px 0 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family:Verdana;
+  width: auto;
+  height: 40px;
+  font-size: 18px;
+}
+
+.add-btn:hover {
+  background-color: #fff;
+}
+
+.add-btn:active {
+  box-shadow: #333333 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* @media (min-width: 768px) {
+  .add-btn {
+    min-width: 80px;
+    padding: 0 25px;
+  }
+} */
+
+.position-right{
+    position: absolute;
+    right:24px;
+}
