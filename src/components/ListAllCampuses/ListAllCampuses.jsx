@@ -23,12 +23,12 @@ function ListAllCampuses({ campus }) {
     console.log('LIST ALLCAMPUSES COMPONENTS');
     return (
         <div className="campus_container">
+
+            <div className="campus_image_div">
+
+                <img src={campus.imageUrl} alt={campus.name} className="campus_image" />
+            </div>
             <Link to={`/campuses/${campus.id}`} className="campus_link">
-                <div className="campus_image_div">
-
-                    <img src={campus.imageUrl} alt={campus.name} className="campus_image" />
-                </div>
-
                 <div className="campus_font">
                     <h4><b>{campus.name}</b></h4>
                 </div>
@@ -42,7 +42,7 @@ function ListAllCampuses({ campus }) {
                 </div>
             </Link>
 
-            <div>
+            <div className="action_Buttons">
                 <button className="campus_delete" onClick={HandleDelete}>
                     Delete
                 </button>
