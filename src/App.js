@@ -7,6 +7,7 @@ import SingleCampusPage from "./pages/SingleCampusPage";
 import EditCampusPage from "./pages/EditCampusPage";
 import AddCampusPage from "./pages/AddCampusPage";
 import SingleStudentPage from "./pages/SingleStudentPage";
+import EditStudentPage from "./pages/EditStudentPage";
 
 
 
@@ -26,7 +27,7 @@ function App() {
         <Route path="/campuses/add" element = {<AddCampusPage />}/>
         <Route path="/students" element={<Students />} />
         <Route path="/students/:id" element={<SingleStudentPage />}/>
-        
+        <Route path="/students/edit/:id" element={<EditStudentPage />} />
       </Routes>
     </Router>
   );
