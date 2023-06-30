@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import Home from "./pages/Home/Home";
-import Campuses from './pages/Campuses';
+import Campuses from "./pages/Campuses/Campuses";
 import Students from './pages/AllStudents/Students';
 import SingleCampusPage from "./pages/SingleCampusPage";
 import EditCampusPage from "./pages/EditCampusPage";

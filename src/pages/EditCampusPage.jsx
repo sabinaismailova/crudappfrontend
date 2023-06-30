@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { fetechSingleCampusThunk } from "../redux/campus/campus.action";
-import EditCampus from "../components/EditCampus";
+import EditCampus from "../components/forms/EditCampus";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
@@ -19,7 +19,6 @@ const EditCampusPage =()=>{
     return (
         <div>
             <Navbar />
-            <h1>Edit Campus</h1>
             <EditCampus />
             <Footer />
         </div>
