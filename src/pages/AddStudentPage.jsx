@@ -12,7 +12,7 @@ function AddStudentPage() {
 
     function handleSubmit(student){
         dispatch(addStudentThunk(student));
-        navigate(`/students/${student.id}`);
+        navigate(`/students`);
     };
 
   return (
