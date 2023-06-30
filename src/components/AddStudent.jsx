@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 function AddStudent({onSubmit}) {
     const [newStudent, setNewStudent] = useState({
