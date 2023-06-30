@@ -23,22 +23,31 @@ function ListAllCampuses({ campus }) {
     console.log('LIST ALLCAMPUSES COMPONENTS');
     return (
         <div className="campus_container">
-            <h2 className="campus_title">
-                <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
-            </h2>
+            <Link to={`/campuses/${campus.id}`} className="campus_link">
+                <div className="campus_image_div">
 
-            <img src={campus.imageUrl} alt={campus.name} className="campus_image" />
+                    <img src={campus.imageUrl} alt={campus.name} className="campus_image" />
+                </div>
 
-            <p className="campus_description">{campus.description}</p>
+                <div className="campus_font">
+                    <h4><b>{campus.name}</b></h4>
+                </div>
 
-            <p>{campus.address} </p>
+                <div className="campus_description_div">
+                    <p>{campus.description}</p>
+                </div>
+
+                <div className="campus_address_div">
+                    <p>{campus.address}</p>
+                </div>
+            </Link>
 
             <div>
                 <button className="campus_delete" onClick={HandleDelete}>
                     Delete
                 </button>
 
-                <Link to={`/campuses/edit/${campus.id}`}>Edit</Link>
+                <Link to={`/campuses/edit/${campus.id}`} className="campus_link">Edit</Link>
             </div>
 
 
