@@ -27,6 +27,14 @@ export const deleteStudent = (payload) => {
 
 };
 
+export const editStudent = (payload) => {
+    console.log("EDIT STUDENT ACTION ACTIVE");
+    return {
+        type: StudentActionType.EDIT_STUDENT,
+        payload: payload,
+    };
+};
+
 export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
@@ -59,8 +67,22 @@ export const deleteStudentThunk = (studentid) => {
         try {
             console.log("FETCHDELETESTUDENTTHUNK IS FIRING");
             await axios.delete(`http://localhost:8080/api/students/removeStudentByID/${studentid}`);
-            console.log("FETECHDELETECAMPUSESTHUNK COMPLETED");
+            console.log("FETECHDELETESTUDENTSTHUNK COMPLETED");
             dispatch(deleteStudent(studentid));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+};
+
+export const editStudentThunk = (student) => {
+    return async (dispatch) => {
+        try {
+            console.log("EDITSTUDENTTHUNK IS FIRING");
+            const response = await axios.put(`http://localhost:8080/api/students/editStudentByID/${student.id}`, student);
+            console.log("EDITSTUDENTTHUNK COMPLETED");
+            dispatch(editStudent(response.data));
+            console.log("Edit Student Data: ", response.data);
         } catch (error) {
             console.error(error);
         }

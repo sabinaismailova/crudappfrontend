@@ -25,7 +25,8 @@ function ListAllStudents({student}) {
               }
           </div>
         </Link>
-          <button onClick={handleDelete}>X</button>
+        <button onClick={handleDelete}>X</button>
+        <Link to={`/students/edit/${student.id}`}>Edit</Link>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ const StudentActionType = {
     FETCH_ALL_STUDENTS:'FETCH_ALL_STUDENTS',
     FETCH_SINGLE_STUDENTS: 'FETCH_SINGLE_STUDENT',
     DELETE_STUDENT: 'DELETE_STUDENT',
+    EDIT_STUDENT: 'EDIT_STUDENT',
 }
 
 export default StudentActionType;
