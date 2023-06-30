@@ -20,6 +20,12 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
             return {
                 ...state, allStudents:state.allStudents.filter(student=>student.id !==action.payload),
             };
+        case StudentActionType.EDIT_STUDENT:
+            return {
+                ...state, 
+                allStudents:state.allStudents.map((student)=>(student.id===action.payload.id? action.payload:student)),
+                singleStudent:action.payload,
+            };
         default:
             return state;
     }
