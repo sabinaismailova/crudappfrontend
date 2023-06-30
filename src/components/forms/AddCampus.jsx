@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./forms.css";
+import { useNavigate } from "react-router-dom";
 const AddCampus = ({ onSubmit }) => {
+  const navigate = useNavigate();
   const [newCampus, setnewCampus] = useState({
     name: "",
     address: "",
@@ -18,6 +20,7 @@ const AddCampus = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(newCampus);
+    navigate('/campuses');
   };
 
   return (
