@@ -4,6 +4,7 @@ import './navbar.css';
 function Navbar() {
   return (
     <nav className='Navbar'>
+      {/*Navbar component*/}
           <ul>
             <li>
               <Link to="/">Home</Link>
