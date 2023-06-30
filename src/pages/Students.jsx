@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllStudentsThunk } from '../redux/students/student.action';
 import ListAllStudents from '../components/ListAllStudents';
+import Navbar from '../components/navbar/Navbar';
 
 function Students() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function Students() {
       {
         //div holding header and add student button 
       }
+      <Navbar />
       <div>
         <h1>All Students</h1>
         <button>Add Student</button>
