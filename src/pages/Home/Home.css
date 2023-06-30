@@ -1,0 +1,40 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4%;
+  text-align: center;
+}
+
+.sentence {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sentence:first-of-type {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sentence:last-of-type {
+  font-style: italic;
+}
+
+.sentence:last-of-type::before,
+.sentence:last-of-type::after {
+  content: '"';
+}
+
+.sentence:last-of-type::before {
+  margin-right: 8px;
+}
+
+.sentence:last-of-type::after {
+  margin-left: 8px;
+}
+
