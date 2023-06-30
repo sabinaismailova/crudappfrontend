@@ -25,6 +25,26 @@ function Campuses() {
   return (
     <div>
       <Navbar />
+      <div style={{
+        textAlign:'center',
+      }}>
+      <h1>All Campuses List</h1>
+      </div>
+      <div style={{ 
+        margin: "10px 40px",
+        textAlign:'right',
+      }}>
+        <Link to="/campuses/add">
+          <button style={{
+            borderRadius:'10px',
+            backgroundColor:'gray',
+            width:'160px',
+            height:'30px'
+          }}>
+            Add Campus
+          </button>
+        </Link>
+      </div>
       <div
         style={{
           display: "flex",
@@ -40,12 +60,9 @@ function Campuses() {
           <p>There are no campus resgerted in the database!</p>
         )}
       </div>
-      <div style={{ marginTop: "20px" }}>
-        <Link to="/campuses/add">
-          <button>Add Campus</button>
-        </Link>
-      </div>
+      
       <Footer />
+      
     </div>
   );
 }
