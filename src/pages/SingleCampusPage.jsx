@@ -4,6 +4,8 @@ import { fetechSingleCampusThunk } from "../redux/campus/campus.action";
 import { fetchAllStudentsThunk } from "../redux/students/student.action";
 import ListSingleCampus from "../components/ListSingleCampus";
 import { useParams } from "react-router";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 function SingleCampusPage(){
     const campus = useSelector(state => state.campuses.singleCampus);
@@ -36,9 +38,12 @@ function SingleCampusPage(){
     const campusStudents = students.filter(student => student.campusId===parseInt(id));
     console.log("CAMPUSES STUDENTS",campusStudents);
     return (
+      <div>
+        <Navbar />
         <ListSingleCampus campus={campus} students={campusStudents} />
-
-   );
+        <Footer />
+      </div>
+    );
 
 
 }
