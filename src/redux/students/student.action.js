@@ -43,6 +43,7 @@ export const addStudent = (payload) =>{
     };
 };
 
+
 export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
@@ -110,3 +111,4 @@ export const addStudentThunk =(newStudent) =>{
         }
     };
 };
+

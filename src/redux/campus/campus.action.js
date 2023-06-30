@@ -117,3 +117,23 @@ export const addCampusThunk =(newCampus) =>{
         }
     };
 };
+
+export const fetchCampusName = (name) => ({
+  type: CampusActionType.FETCH_CAMPUS_NAME,
+  payload: name,
+});
+
+export const fetchCampusNameThunk = (campusId) => {
+  return async (dispatch) => {
+
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/campuses/getCampusByID/${campusId}`
+      );
+      const campusName = response.data.name;
+      dispatch(fetchCampusName(campusName));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
