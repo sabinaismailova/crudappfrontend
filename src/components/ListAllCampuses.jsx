@@ -25,7 +25,7 @@ function ListAllCampuses({campus}) {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '45%',
+            width: '40%',
             margin: '2.5%',
             padding: '10px',
             border: '1px solid black',
@@ -39,19 +39,22 @@ function ListAllCampuses({campus}) {
             </h2>
 
             <img src={campus.imageUrl} alt={campus.name} style={{
-                height: '150px',
+                height: '180px',
                 objectFit: 'cover'
 
             }} />
+            <p style={{fontWeight:'bold'}}>Description:</p>
 
             <p style={{
-                flexGrow: 1
+                flexGrow: 0
             }}>
                 {campus.description}
 
             </p>
+            <p style={{fontWeight:'bold'}}>Address:</p>
 
             <p>
+                
                 {campus.address}
 
             </p>

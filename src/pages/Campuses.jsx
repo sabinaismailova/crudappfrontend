@@ -23,25 +23,58 @@ function Campuses() {
   return (
     <div>
       <div style={{
-        display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-between'
       }}>
+        <div>
+          <h1 style={{
+            textAlign: 'center'
+          }}>Campuses List</h1>
+        </div>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/students">Students</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        {allcampuses.length > 0 ? allcampuses.map(campus => (
-          <ListAllCampuses key={campus.id} campus={campus} />
-        )) : <p>
-          There are no campus resgerted in the database!
-        </p>
-        }
+
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap'
+        }}>
+          {allcampuses.length > 0 ? allcampuses.map(campus => (
+            <ListAllCampuses key={campus.id} campus={campus} />
+          )) : <p>
+            There are no campus resgerted in the database!
+          </p>
+          }
+        </div>
 
       </div>
       <div style={{ marginTop: '20px' }}>
+        <div style={{
+            textAlign:'center',
+          }}>
         <Link to="/campuses/add">
-          <button>
+          <button style={{
+            width:'150px',
+            height:'40px',
+            borderRadius:'5px',
+            backgroundColor:'lightblue',
+            margin:'20px'
+
+          }}>
             Add Campus
           </button>
         </Link>
+        </div>
       </div>
     </div>
   );
