@@ -3,11 +3,12 @@ import "./forms.css";
 import { useNavigate } from "react-router-dom";
 const AddCampus = ({ onSubmit }) => {
   const navigate = useNavigate();
+  const defaultImageUrl = "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/288/2019/03/19223634/Image-Coming-Soon-Placeholder.png";
   const [newCampus, setnewCampus] = useState({
     name: "",
     address: "",
     description: "",
-    imageUrl: "",
+    imageUrl: defaultImageUrl,
   });
 
   const HandleInputChange = (event) => {
