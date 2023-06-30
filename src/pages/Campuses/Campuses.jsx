@@ -26,12 +26,12 @@ function Campuses() {
   return (
     <div className="campus_page">
       <Navbar />
-      <div className='title'>
+      <div className='all_campus_header'>
         <h1>All Campuses List</h1>
       </div>
       <div className='campus_add'>
         <Link to="/campuses/add">
-          <button className='add_Button'>
+          <button className='add_Campus_Button'>
             Add Campus
           </button>
         </Link>
