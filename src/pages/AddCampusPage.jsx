@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import AddCampus from "../components/AddCampus";
+import AddCampus from "../components/forms/AddCampus";
 import { addCampusThunk } from "../redux/campus/campus.action";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
