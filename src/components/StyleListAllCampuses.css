@@ -1,28 +1,26 @@
 .campus_container {
-    display: 'flex';
-    flex-direction: 'column';
-    width: '40%';
-    margin: '2.5%';
-    padding: '10px';
-    border: '1px solid black';
-    border-radius: '5PX';
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2.5%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-.campus.title{
-text-align: center;
-
+.campus_title {
+    text-align: center;
 }
 
-.campus_image{
-height: 150px;
-object-fit: cover;
-
+.campus_image {
+    height: 150px;
+    object-fit: cover;
 }
 
-.campus_description{
-flex-grow: 1;
+.campus_description {
+    flex-grow: 1;
 }
 
-.campus_delete{
-margin-right: 10px;
+.campus_delete {
+    margin-right: 10px;
 }
