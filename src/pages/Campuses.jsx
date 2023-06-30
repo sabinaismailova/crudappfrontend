@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetechAllCampusesThunk } from '../redux/campus/campus.action';
 import ListAllCampuses from '../components/ListAllCampuses';
+import Navbar from '../components/navbar/Navbar';
 
 function Campuses() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function Campuses() {
 
   return (
     <div>
+      <Navbar />
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
