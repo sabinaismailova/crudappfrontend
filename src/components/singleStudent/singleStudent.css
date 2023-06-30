@@ -33,13 +33,6 @@
   margin-bottom: 4px;
 }
 
-.student-actions {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  margin-left: 60px;
-}
-
 .edit-link,
 .delete-button {
   padding: 8px 16px;
