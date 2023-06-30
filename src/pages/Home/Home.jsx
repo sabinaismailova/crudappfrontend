@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <div class="container">
+      <div class="home">
         <p class="sentence">
           Welcome to our Campus and Student Management System
         </p>
