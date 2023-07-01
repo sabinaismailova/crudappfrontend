@@ -23,7 +23,7 @@ export const fetchSingleStudent = (payload)=>{
 };
 
 //stores an object with type delete student and stores info obj of student to be deleted in the payload
-//returns the obj with the deleting student's info obj 
+//returns the obj with the deleted student's info obj 
 export const deleteStudent = (payload) => {
     console.log("DELETE STUDENT ACTION ACTIVE");
     return {
@@ -40,6 +40,8 @@ export const editStudent = (payload) => {
     };
 };
 
+//stores an object with type add student and stores info obj of student to be added in the payload
+//returns the obj with the added student's info obj
 export const addStudent = (payload) =>{
     console.log("ADD STUDENT ACTION ACTIVE");
     return {
@@ -109,6 +111,9 @@ export const editStudentThunk = (student) => {
     };
 };
 
+
+//calls post in backend with appropriate endpoint and dispatches the addStudent func with the response data
+//which returns the info of the student to be added in the object payload and returns the obj 
 export const addStudentThunk =(newStudent) =>{
     return async (dispatch) => {
         try {
@@ -117,8 +122,7 @@ export const addStudentThunk =(newStudent) =>{
             console.log("ADDSTUDENTTHUNK COMPLETED");
             dispatch(addStudent(response.data));
         } catch (error) {
-            console.error(error);
-            
+            console.error(error);  
         }
     };
 };
