@@ -1,0 +1,60 @@
+.campus_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.all_campus_header {
+    display: block;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 32px;
+    color: #333333;
+    text-shadow: 2px 2px 5px #5555558e;
+    margin: 20px;
+}
+
+.add_Campus_Button {
+    background-color: #efefef;
+    border: 2px solid #333333;
+    border-radius: 30px;
+    box-shadow: #333333 4px 4px 0 0;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: Verdana;
+    width: auto;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+.add_campus_button:hover {
+    background-color: #fff;
+}
+
+.add_campus_button:active {
+    box-shadow: #333333 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+.campus_add {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.campuses_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em;
+}
+

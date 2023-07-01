@@ -1,0 +1,125 @@
+.single_campus_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.single_campus_title {
+    font-family: Verdana;
+    font-size: 32px;
+    color: #333333;
+    text-shadow: 2px 2px 5px #5555558e;
+    margin: 20px;
+    text-align: center;
+}
+
+.single_campus_card {
+    width:100%;
+    height:300px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 40px 0;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.single_campus_image {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.single_campus_details {
+    margin: 16px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.all_students_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.add_student_button {
+    background-color: #efefef;
+    border: 2px solid #333333;
+    border-radius: 30px;
+    box-shadow: #333333 4px 4px 0 0;
+    color: #333333;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: Verdana;
+    width: auto;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 24px;
+}
+
+.add_student_button:hover {
+    background-color: #fff;
+}
+
+.add_student_button:active {
+    box-shadow: #333333 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+.all_students_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.students_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.single_student_card {
+    width: 220px;
+    height: 380px;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 32px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.single_student_image {
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.edit_btn {
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: -250px;
+}

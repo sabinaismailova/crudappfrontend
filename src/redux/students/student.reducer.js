@@ -1,6 +1,6 @@
 import StudentActionType from "./student.types";
 
-//defin the initial state
+//define the initial state for all students array and single student object 
 export const INITIAL_STUDENT_STATE = {
     allStudents:[],
     singleStudent: {},
@@ -15,6 +15,21 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
         case StudentActionType.FETCH_SINGLE_STUDENTS:
             return {
                 ...state, singleStudent:action.payload
+            };
+        case StudentActionType.DELETE_STUDENT:
+            return {
+                ...state, allStudents:state.allStudents.filter(student=>student.id !==action.payload),
+            };
+        case StudentActionType.EDIT_STUDENT:
+            return {
+                ...state, 
+                allStudents:state.allStudents.map((student)=>(student.id===action.payload.id? action.payload:student)),
+                singleStudent:action.payload,
+            };
+        case StudentActionType.ADD_STUDENT:
+            return {
+                ...state,
+                allStudents:[...state.allStudents, action.payload],
             };
         default:
             return state;
