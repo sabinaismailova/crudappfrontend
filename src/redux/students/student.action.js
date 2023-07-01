@@ -2,6 +2,8 @@ import axios from "axios";
 
 import StudentActionType from "./student.types";
 
+//stores an object with a type of fetch all students and adds students array to the payload
+//returns the object with all students info in array 
 export const fetchAllStudents = (payload) =>{
     console.log("FETCH ALL STUDENTS ACTION");
     return {
@@ -20,13 +22,14 @@ export const fetchSingleStudent = (payload)=>{
     };
 };
 
+//stores an object with type delete student and stores info obj of student to be deleted in the payload
+//returns the obj with the deleting student's info obj 
 export const deleteStudent = (payload) => {
     console.log("DELETE STUDENT ACTION ACTIVE");
     return {
         type: StudentActionType.DELETE_STUDENT,
         payload: payload,
     };
-
 };
 
 export const editStudent = (payload) => {
@@ -45,7 +48,9 @@ export const addStudent = (payload) =>{
     };
 };
 
-
+//gets all students info array from database in response const 
+//response const data is dispatched to the fetchAllStudents func 
+//which stores all student's array from database in obj payload and returns the object 
 export const fetchAllStudentsThunk = () =>{
     return async (dispatch) =>{
         try{
@@ -75,6 +80,8 @@ export const fetchSingleStudentThunk = (studentid) =>{
     };
 };
 
+//calls delete in backend with appropriate endpoint and dispatches the deleteStudent func
+//which returns the info of the studen to be deleted in the object payload and returns the obj 
 export const deleteStudentThunk = (studentid) => {
     return async (dispatch) => {
         try {
