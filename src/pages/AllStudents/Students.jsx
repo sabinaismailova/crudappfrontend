@@ -35,9 +35,11 @@ function Students() {
   return (
     <div>
       <Navbar />
-      <h1 class="header">All Students</h1>
-      <div class="position-right">
-        <Link to="/students/add"><button class="add-btn">Add Student</button></Link>
+      <div style={{display:"block"}}>
+        <h1 class="header">All Students</h1>
+        <div class="position-right">
+          <Link to="/students/add"><button class="add-btn">Add Student</button></Link>
+        </div>
       </div>
       <div class="container">
         {allstudents.length>0 ? allstudents.map(student =>(

@@ -3,11 +3,10 @@
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    margin-top:40px;
+    margin-top:0px;
 }
 
 .header{
-    display:block;
     text-align:center;
     font-family:Verdana;
     font-size:32px;
@@ -56,5 +55,6 @@
 
 .position-right{
     position: absolute;
+    top:80px;
     right:24px;
 }
