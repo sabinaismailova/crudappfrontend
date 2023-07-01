@@ -5,10 +5,12 @@ import { useEffect } from "react";
 import { deleteStudentThunk } from "../../redux/students/student.action";
 import { fetchCampusNameThunk } from "../../redux/campus/campus.action";
 import "./singleStudent.css";
+import { useNavigate } from "react-router-dom";
 
 //component used to render SingleStudentPage contents 
 function ListSingleStudent({ student }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   //gets the campus name string from the campus reducer 
   const campusName = useSelector((state) => state.campuses.campusName);
 
@@ -25,6 +27,7 @@ function ListSingleStudent({ student }) {
     dispatch(deleteStudentThunk(student.id));
     console.log(student.id);
     console.log("STUDENT DELETED");
+    navigate('/students');
   };
 
   //renders the div containing the student info in a container on the SingleStudentPage 

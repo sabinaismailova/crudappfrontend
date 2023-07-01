@@ -2,17 +2,24 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './StyleListSingleCampu.css';
 import { useNavigate } from "react-router-dom";
+import { deleteCampusThunk } from "../../redux/campus/campus.action";
+import { useDispatch } from "react-redux";
 //use to show style the single campus page
 function ListSingleCampus({ campus, students }) {
     console.log('LIST SINGLE STUDENTS COMPONENTS');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function handleEdit(){
         navigate(`/campuses/edit/${campus.id}`);
     }
 
     function handleDelete(){
-        navigate('/campuses')
+        console.log("Try to delete")
+        dispatch(deleteCampusThunk(campus.id));
+        console.log(campus.id);
+        console.log("I have deleted")
+        navigate('/campuses');
     }
 
     return (
