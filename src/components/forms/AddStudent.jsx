@@ -35,7 +35,7 @@ function AddStudent({ onSubmit }) {
   //img url is set to the default user img and will remain the same unless user changes the img url 
   return (
     <div className="forms">
-      <h1>Student Info</h1>
+      <h1 className="header">Student Info</h1>
       <form onSubmit={handleSubmit}>
         <label>First Name:</label>{" "}
         <input

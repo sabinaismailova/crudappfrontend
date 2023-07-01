@@ -26,7 +26,7 @@ const AddCampus = ({ onSubmit }) => {
 
   return (
     <div className="forms">
-      <h1>Campus Info</h1>
+      <h1 className="header">Campus Info</h1>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input

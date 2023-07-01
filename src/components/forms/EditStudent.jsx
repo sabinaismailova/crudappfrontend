@@ -32,6 +32,7 @@ function EditStudent() {
 
   return (
     <div className="forms">
+      <h1 className={"header"}>Edit Student</h1>
       <form onSubmit={handleEditSubmit}>
         <label>First Name: </label>
         <input

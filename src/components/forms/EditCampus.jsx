@@ -31,7 +31,7 @@ const EditCampus = () => {
 
   return (
     <div className="forms">
-      <h1>Edit Campus</h1>
+      <h1 className={"header"}>Edit Campus</h1>
       <form onSubmit={handleEditSubmit}>
         <label>Name: </label>
         <input
