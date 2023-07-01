@@ -11,6 +11,10 @@ function ListSingleCampus({ campus, students }) {
         navigate(`/campuses/edit/${campus.id}`);
     }
 
+    function handleDelete(){
+        navigate('/campuses')
+    }
+
     return (
         <div className="single_campus_container">
             
@@ -20,7 +24,8 @@ function ListSingleCampus({ campus, students }) {
                     <h1>{campus.name}</h1>
                     <p>{campus.description}</p>
                     <div>
-                        <button className={"edit_btn"} onClick={handleEdit}>Edit</button>
+                        <button className={"single_campus_delete"} onClick={handleDelete}>Delete</button>
+                        <button className={"single_campus_edit"} onClick={handleEdit}>Edit</button>
                     </div>
                 </div>
             </div>
