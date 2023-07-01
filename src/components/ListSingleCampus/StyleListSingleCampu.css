@@ -115,11 +115,21 @@
     object-fit: cover;
 }
 
-.edit_btn {
-    background-color: #333;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 8px;
-    margin-bottom: -250px;
+.single_campus_delete, .single_campus_edit {
+    width:auto;
+    height:auto;
+    margin-left: 0px;
+    background-color: rgba(151, 42, 42, 0.9);
+    border-radius:4px;
+    font-family:Verdana;
+    font-weight:500;
+    font-size:16px;
+    color:#ffffff;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+.single_campus_edit{
+    background-color: rgb(51, 51, 51, 0.9);
+    margin-left: 8px;
 }
