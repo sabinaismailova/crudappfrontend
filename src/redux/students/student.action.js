@@ -10,6 +10,8 @@ export const fetchAllStudents = (payload) =>{
     };
 };
 
+//stores an object with the type single student and adds student's info to the payload
+//returns the object with the single student info 
 export const fetchSingleStudent = (payload)=>{
     console.log("FETCH SINGLE STUDENT ACTION");
     return {
@@ -57,7 +59,9 @@ export const fetchAllStudentsThunk = () =>{
     };
 };
 
-//the api address here is wrong need to fix when backend is ready
+//gets the single student info from database in response const 
+//and response const data is dispatched to the fetchSingleStudent func 
+//which stores the student's info in the object payload and returns the object 
 export const fetchSingleStudentThunk = (studentid) =>{
     return async (dispatch)=>{
         try {

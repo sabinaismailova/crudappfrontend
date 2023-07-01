@@ -1,6 +1,6 @@
 import StudentActionType from "./student.types";
 
-//defin the initial state
+//define the initial state for all students array and single student object 
 export const INITIAL_STUDENT_STATE = {
     allStudents:[],
     singleStudent: {},
