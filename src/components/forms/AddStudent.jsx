@@ -9,7 +9,7 @@ function AddStudent({ onSubmit }) {
     email: "",
     imageUrl: "https://i.stack.imgur.com/l60Hf.png",
     gpa: "",
-    campusId: "",
+    campusId: null,
   });
 
   //handle change func used to set the new student obj values based on user input in the form

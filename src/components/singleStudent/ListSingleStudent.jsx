@@ -60,9 +60,11 @@ function ListSingleStudent({ student }) {
         </div>
       </div>
       <div className="student-campus">
-        <Link to={`/campuses/${student.campusId}`}>
-          Campus Name: {campusName}
-        </Link>
+        {student.campusId===null? "*No College Registered*":
+          <Link to={`/campuses/${student.campusId}`}>
+            Campus Name: {campusName}
+          </Link>
+        }
       </div>
     </div>
   );
