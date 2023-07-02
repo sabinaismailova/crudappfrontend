@@ -26,7 +26,7 @@ function SingleStudentPage() {
   useEffect(() => {
     console.log("FETCHING SINGLE STUDENT IN USE EFFECT");
     fetchSingleStudent();
-  }, [id]);
+  },[id]);
 
   //renders the navbar and footer with their components
   //renders the single student page contents through ListSingleStudent component
