@@ -19,9 +19,8 @@ function Campuses() {
 
   useEffect(() => {
     console.log('FETECH ALL CAMPUSES FIRING IN USE EFFECT');
-
     fetechAllCampuses();
-  }, []);
+  },[]);
 
   return (
     <div className="campus_page">

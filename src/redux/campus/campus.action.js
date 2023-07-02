@@ -51,7 +51,7 @@ export const fetechAllCampusesThunk = () => {
     return async (dispatch) => {
         try {
             console.log("FETECHALLCAMPUSESTHUNK IS FIRING");
-            const response = await axios.get('http://localhost:8080/api/campuses/getAllCampuses');
+            const response = await axios.get(process.env.REACT_APP_CAMPUS_KEY);
             console.log("FETECHALLCAMPUSESTHUNK COMPLETED");
             dispatch(fetechAllCampuses(response.data));
         } catch (error) {
@@ -66,7 +66,7 @@ export const fetechSingleCampusThunk = (campusid) => {
     return async (dispatch) => {
         try {
             console.log("FETECHsingleCAMPUSESTHUNK IS FIRING");
-            const response = await axios.get(`http://localhost:8080/api/campuses/getCampusByID/${campusid}`);
+            const response = await axios.get(`${process.env.REACT_APP_CAMPUS_KEY}${campusid}`);
             console.log("FETECHSINGLECAMPUSESTHUNK COMPLETED");
             dispatch(fetechSingleCampus(response.data));
         } catch (error) {
@@ -80,7 +80,7 @@ export const deleteCampusThunk = (campusid) => {
     return async (dispatch) => {
         try {
             console.log("FETECHDELETECAMPUSESTHUNK IS FIRING");
-            await axios.delete(`http://localhost:8080/api/campuses/removeCampusByID/${campusid}`);
+            await axios.delete(`${process.env.REACT_APP_CAMPUS_KEY}${campusid}`);
             console.log("FETECHDELETECAMPUSESTHUNK COMPLETED");
             dispatch(deleteCampus(campusid));
         } catch (error) {
@@ -95,7 +95,7 @@ export const editCampusThunk = (campus) => {
 
         try {
             console.log("EDITCAMPUSESTHUNK IS FIRING");
-            const response = await axios.put(`http://localhost:8080/api/campuses/editCampusByID/${campus.id}`, campus);
+            const response = await axios.put(`${process.env.REACT_APP_CAMPUS_KEY}${campus.id}`, campus);
             console.log("EDITCAMPUSESTHUNK COMPLETED");
             dispatch(editCampus(response.data));
         } catch (error) {
@@ -108,7 +108,7 @@ export const addCampusThunk =(newCampus) =>{
     return async (dispatch) => {
         try {
             console.log("ADDCAMPUSESTHUNK IS FIRING");
-            const response = await axios.post('http://localhost:8080/api/campuses/addCampus', newCampus);
+            const response = await axios.post(process.env.REACT_APP_CAMPUS_KEY, newCampus);
             console.log("ADDCAMPUSESTHUNK COMPLETED");
             dispatch(addCampus(response.data));
         } catch (error) {
@@ -128,7 +128,7 @@ export const fetchCampusNameThunk = (campusId) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/campuses/getCampusByID/${campusId}`
+        `${process.env.REACT_APP_CAMPUS_KEY}${campusId}`
       );
       const campusName = response.data.name;
       dispatch(fetchCampusName(campusName));
