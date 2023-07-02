@@ -35,8 +35,6 @@ function Students() {
   return (
     <div>
       <Navbar />
-      <h1>{process.env.REACT_APP_STUDENT_KEY}</h1>
-      <h1>{process.env.REACT_APP_CAMPUS_KEY}</h1>
       <div style={{display:"block"}}>
         <h1 class="header">All Students</h1>
         <div class="position-right">
