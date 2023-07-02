@@ -18,7 +18,9 @@ function Home() {
         <p class="sentence">
           The system allows you to view, add, and delete the data
         </p>
-        <img src={homeImage} alt="Home" />
+        <div className="image-container">
+          <img src={homeImage} alt="Home" />
+        </div>
       </div>
 
       {
