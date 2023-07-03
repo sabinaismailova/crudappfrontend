@@ -12,18 +12,16 @@ function Campuses() {
   //get allcampuses info from the store
   const allcampuses = useSelector(state => state.campuses.allCampus);
 
-  //fetch all campuses info
-  const fetechAllCampuses = () => {
-
-    console.log('RUNNING DISPATCH FROM FETECHALLCAMPUSES');
-    return dispatch(fetechAllCampusesThunk());
-  };
-
   //execute the function
   useEffect(() => {
     console.log('FETECH ALL CAMPUSES FIRING IN USE EFFECT');
+    //fetch all campuses info
+    const fetechAllCampuses = () => {
+      console.log('RUNNING DISPATCH FROM FETECHALLCAMPUSES');
+      return dispatch(fetechAllCampusesThunk());
+    };
     fetechAllCampuses();
-  },[]);
+  },[dispatch]);
 
   return (
     <div className="campus_page">

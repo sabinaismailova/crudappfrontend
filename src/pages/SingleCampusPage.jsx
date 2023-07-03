@@ -17,26 +17,23 @@ function SingleCampusPage(){
     //get the id from the url
     const { id } = useParams();
     console.log(id);
-
-    //fetech single campus info
-    const fetechSingleCampus = ()=>{
-        console.log('RUNNING DISPATCH FROM FETECHSINGLECAMPUS');
-        return dispatch(fetechSingleCampusThunk(id));
-    };
-
-    //fetech all campuses info
-    const fetchAllStudents = ()=>{
-        console.log('RUNNING DISPATCH FROM FETECHALLSTUDENTS');
-        return dispatch(fetchAllStudentsThunk());
-
-    };
     
     //use to execute the two function 
     useEffect(()=>{
         console.log('FETCHING SINGLE CAMPUS AND ALL STUDENTS IN USE EFFECT');
+        //fetech all campuses info
+        const fetchAllStudents = ()=>{
+            console.log('RUNNING DISPATCH FROM FETECHALLSTUDENTS');
+            return dispatch(fetchAllStudentsThunk());
+        };
+        //fetech single campus info
+        const fetechSingleCampus = ()=>{
+            console.log('RUNNING DISPATCH FROM FETECHSINGLECAMPUS');
+            return dispatch(fetechSingleCampusThunk(id));
+        };
         fetechSingleCampus();
         fetchAllStudents();
-    },[]);
+    },[id, dispatch]);
 
     //only get the students exists in current campus
     const campusStudents = students.filter(student => student.campusId===parseInt(id));

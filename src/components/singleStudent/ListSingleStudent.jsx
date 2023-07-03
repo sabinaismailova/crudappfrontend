@@ -46,7 +46,7 @@ function ListSingleStudent({ student }) {
 
     useEffect(() => {
       dispatch(fetechAllCampusesThunk());
-    }, []);
+    }, [dispatch]);
 
     console.log("Student Object: ", student);
   //renders the div containing the student info in a container on the SingleStudentPage 

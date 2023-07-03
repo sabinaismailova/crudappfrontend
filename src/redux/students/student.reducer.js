@@ -38,7 +38,7 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
           allStudents: [...state.allStudents, action.payload],
         };
       case StudentActionType.ENROLL_STUDENT:
-        const { studentId, campusId } = action.payload;
+        const { campusId } = action.payload;
         return {
           ...state,
           singleStudent: {...state.singleStudent, campusId},
