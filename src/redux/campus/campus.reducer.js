@@ -12,13 +12,27 @@ export const INITIAL_CAMPUS_STATE = {
 const campuses = (state = INITIAL_CAMPUS_STATE, action) => {
   console.log("CAMPUSREDUCER IS HADLING FETECH ALL CAMPUS ACTION");
   switch (action.type) {
+    /**
+     * copy the current data
+     * append the payload(allcampuse)
+     */
     case CampusActionType.FETECH_ALL_CAMPUSES:
       return { ...state, allCampus: action.payload };
+
+      /**
+       * copy the current state
+       * send the single campus we get store in the singleCampus variable
+       */
     case CampusActionType.FETECH_SINGLE_CAMPUS:
       return {
         ...state,
         singleCampus: action.payload,
       };
+      /**
+       * ...state:make the copy of the current 
+       * go through the allcampus, only keep the campus without the delete id campus
+       * here action.payload is the campus id
+       */
     case CampusActionType.DELETE_CAMPUS:
       return {
         ...state,
