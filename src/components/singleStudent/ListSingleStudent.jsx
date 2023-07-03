@@ -46,8 +46,9 @@ function ListSingleStudent({ student }) {
 
     useEffect(() => {
       dispatch(fetechAllCampusesThunk());
-    }, [dispatch, campusName]);
+    }, []);
 
+    console.log("Student Object: ", student);
   //renders the div containing the student info in a container on the SingleStudentPage 
   //container shows the student's image with their name, email, and gpa next to it along with the edit and delete buttons 
   //shows the student's campus name under the student info container 

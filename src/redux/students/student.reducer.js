@@ -41,9 +41,7 @@ const students = (state = INITIAL_STUDENT_STATE, action)=>{
         const { studentId, campusId } = action.payload;
         return {
           ...state,
-          allStudents: state.allStudents.map((student) =>
-            student.id === studentId ? { ...student, campusId } : student
-          ),
+          singleStudent: {...state.singleStudent, campusId},
         };
       default:
         return state;
