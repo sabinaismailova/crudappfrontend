@@ -30,10 +30,15 @@ export const editCampus = (payload) => {
   console.log("EDIT CAMPUS ACTION ACTIVE");
   return {
     type: CampusActionType.EDIT_CAMPUS,
+    //here payload is the updated the campus
     payload: payload,
   };
 };
-
+/**
+ * 
+ * @param {*} payload :payload will be use for the reducer the data we want to add the campus
+ * @returns 
+ */
 export const addCampus = (payload) => {
   console.log("ADD CAMPUS ACTION ACTIVE");
   return {
@@ -83,32 +88,47 @@ export const deleteCampusThunk = (campusid) => {
     }
   };
 };
-
+/**
+ * 
+ * @param {*} campus :the campus need to be edited
+ * @returns 
+ */
 export const editCampusThunk = (campus) => {
+  //fetech the data from the server
   return async (dispatch) => {
     try {
       console.log("EDITCAMPUSESTHUNK IS FIRING");
+      //when the api call happens, send the put request to the endpoint
+
       const response = await axios.put(
         `${process.env.REACT_APP_CAMPUS_KEY}${campus.id}`,
         campus
       );
       console.log("EDITCAMPUSESTHUNK COMPLETED");
+      //dispatch the action to the redux store with the data from the api call's response
       dispatch(editCampus(response.data));
     } catch (error) {
       console.error(error);
     }
   };
 };
-
+/**
+ * 
+ * @param {*} newCampus :the new campus we want to add to the database
+ * @returns 
+ */
 export const addCampusThunk = (newCampus) => {
   return async (dispatch) => {
     try {
       console.log("ADDCAMPUSESTHUNK IS FIRING");
+      //the api call, send the new campus data
       const response = await axios.post(
         process.env.REACT_APP_CAMPUS_KEY,
         newCampus
       );
       console.log("ADDCAMPUSESTHUNK COMPLETED");
+      //when  the api request completely, dispact the action to the redux
+      //take the response data as the payload for the action
       dispatch(addCampus(response.data));
     } catch (error) {
       console.error(error);

@@ -41,7 +41,7 @@ function ListSingleStudent({ student }) {
     dispatch(enrollStudentThunk(student.id, selectedCollege));
     console.log("student id: ", student.id)
     console.log("campus id: ", student.campusId);
-    dispatch(fetchCampusNameThunk(student.campusId));
+    dispatch(fetchCampusNameThunk(selectedCollege));
   };
 
     useEffect(() => {

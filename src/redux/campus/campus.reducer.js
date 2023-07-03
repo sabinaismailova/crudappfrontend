@@ -26,6 +26,13 @@ const campuses = (state = INITIAL_CAMPUS_STATE, action) => {
           (campus) => campus.id !== action.payload
         ),
       };
+      /**
+       * return the similar to the old state
+       * it will go throught the allcampus, if the id match, 
+       * replaces the campus with the campus from the payload
+       * otherwise it reamin the same.
+       * 
+       */
     case CampusActionType.EDIT_CAMPUS:
       return {
         ...state,
@@ -35,6 +42,8 @@ const campuses = (state = INITIAL_CAMPUS_STATE, action) => {
         singleCampus: action.payload,
         isLoading: false,
       };
+
+      //update the allCmpus with the current all campuses, and appending with the new campus(which is the payload)
     case CampusActionType.ADD_CAMPUS:
       return {
         ...state,
