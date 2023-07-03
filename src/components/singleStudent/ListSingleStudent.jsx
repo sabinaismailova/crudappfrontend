@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { deleteStudentThunk } from "../../redux/students/student.action";
 import { fetchCampusNameThunk } from "../../redux/campus/campus.action";
+import { fetechAllCampusesThunk } from "../../redux/campus/campus.action";
+import { enrollStudentThunk } from "../../redux/students/student.action";
 import "./singleStudent.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,8 +13,12 @@ import { useNavigate } from "react-router-dom";
 function ListSingleStudent({ student }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [selectedCollege, setSelectedCollege] = useState("");
   //gets the campus name string from the campus reducer 
   const campusName = useSelector((state) => state.campuses.campusName);
+    const availableColleges = useSelector(
+      (state) => state.campuses.allCampus
+    );
 
   //dispatches the fetchCampusNameThunk with the student campusId passed down with student object from SingleStudentPage
   //the thunk is called every time the student's campus id changes 
@@ -29,6 +35,18 @@ function ListSingleStudent({ student }) {
     console.log("STUDENT DELETED");
     navigate('/students');
   };
+
+  const handleEnroll = () => {
+    console.log("Selected College:", selectedCollege);
+    dispatch(enrollStudentThunk(student.id, selectedCollege));
+    console.log("student id: ", student.id)
+    console.log("campus id: ", student.campusId);
+    dispatch(fetchCampusNameThunk(student.campusId));
+  };
+
+    useEffect(() => {
+      dispatch(fetechAllCampusesThunk());
+    }, [dispatch]);
 
   //renders the div containing the student info in a container on the SingleStudentPage 
   //container shows the student's image with their name, email, and gpa next to it along with the edit and delete buttons 
@@ -60,11 +78,27 @@ function ListSingleStudent({ student }) {
         </div>
       </div>
       <div className="student-campus">
-        {student.campusId===null? "*No College Registered*":
+        {student.campusId === null ? (
+          <>
+            <h3>No registered college yet</h3>
+            <select
+              value={selectedCollege}
+              onChange={(e) => setSelectedCollege(e.target.value)}
+            >
+              <option value="">Select College</option>
+              {availableColleges.map((college) => (
+                <option key={college.id} value={college.id}>
+                  {college.name}
+                </option>
+              ))}
+            </select>
+            <button onClick={handleEnroll}>Enroll</button>
+          </>
+        ) : (
           <Link to={`/campuses/${student.campusId}`}>
             Campus Name: {campusName}
           </Link>
-        }
+        )}
       </div>
     </div>
   );

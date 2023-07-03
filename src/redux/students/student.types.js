@@ -4,6 +4,7 @@ const StudentActionType = {
   DELETE_STUDENT: "DELETE_STUDENT",
   EDIT_STUDENT: "EDIT_STUDENT",
   ADD_STUDENT: "ADD_STUDENT",
+  ENROLL_STUDENT: "ENROLL_STUDENT",
 };
 
 export default StudentActionType;
