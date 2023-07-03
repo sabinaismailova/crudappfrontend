@@ -9,14 +9,17 @@ import './StyleCampuses.css';
 
 function Campuses() {
   const dispatch = useDispatch();
+  //get allcampuses info from the store
   const allcampuses = useSelector(state => state.campuses.allCampus);
 
+  //fetch all campuses info
   const fetechAllCampuses = () => {
 
     console.log('RUNNING DISPATCH FROM FETECHALLCAMPUSES');
     return dispatch(fetechAllCampusesThunk());
   };
 
+  //execute the function
   useEffect(() => {
     console.log('FETECH ALL CAMPUSES FIRING IN USE EFFECT');
     fetechAllCampuses();

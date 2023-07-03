@@ -6,14 +6,16 @@ import './StyleListAllCampuses.css';
 
 //use to show all campus
 //06/28/2023: just add two button use to future modify
-
+//pase the single campus as params
 function ListAllCampuses({ campus }) {
 
     //use to handle the delete action
     const dispatch = useDispatch();
 
+    //use to delete the campus
     const HandleDelete = () => {
-        console.log("Try to delete")
+        console.log("Try to delete");
+        //send the campus.id action to the redux
         dispatch(deleteCampusThunk(campus.id));
         console.log(campus.id);
         console.log("I have deleted")
