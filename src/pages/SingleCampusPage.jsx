@@ -31,7 +31,7 @@ function SingleCampusPage(){
         console.log('FETCHING SINGLE CAMPUS AND ALL STUDENTS IN USE EFFECT');
         fetechSingleCampus();
         fetchAllStudents();
-    });
+    },[]);
 
     const campusStudents = students.filter(student => student.campusId===parseInt(id));
     console.log("CAMPUSES STUDENTS",campusStudents);

@@ -4,12 +4,12 @@ import "./forms.css";
 function AddStudent({ onSubmit }) {
   //a local object that has all the values needed to add a student to the backend database 
   const [newStudent, setNewStudent] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    imageUrl: "https://i.stack.imgur.com/l60Hf.png",
-    gpa: 0,
-    campusId: null,
+    // firstName: "",
+    // lastName: "",
+    // email: "",
+    // // imageUrl: "",
+    // gpa: 0,
+    // campusId: null,
   });
 
   //handle change func used to set the new student obj values based on user input in the form

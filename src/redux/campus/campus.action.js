@@ -124,12 +124,14 @@ export const fetchCampusName = (name) => ({
 export const fetchCampusNameThunk = (campusId) => {
   return async (dispatch) => {
     try {
+      if(campusId){
       const response = await axios.get(
         `${process.env.REACT_APP_CAMPUS_KEY}${campusId}`
       );
       const campusName = response.data.name;
       console.log("This is in campusTHUNK", campusName);
       dispatch(fetchCampusName(campusName));
+      }
     } catch (error) {
       console.error(error);
     }
