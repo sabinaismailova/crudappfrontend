@@ -7,11 +7,13 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
 const EditCampusPage =()=>{
+    //use to access the current params of the current router
     const { id } = useParams();
     const dispatch = useDispatch();
 
-    //when the id change it will dispatch action and fetech data
+    //when the id or dispatch change it will dispatch action and fetech data
 
+    //so when the id change, the func will call again to get the newest camps info
     useEffect(()=>{
         dispatch(fetechSingleCampusThunk(id));
     },[id,dispatch]);
