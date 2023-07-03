@@ -143,7 +143,7 @@ export const enrollStudentThunk = (studentId, campusId ) => {
   return async (dispatch) => {
     try {
       dispatch(fetchCampusNameThunk(campusId));
-      const response = await axios.put(
+      await axios.put(
         `${process.env.REACT_APP_STUDENT_KEY}${studentId}`,
         { campusId: campusId }
       );
