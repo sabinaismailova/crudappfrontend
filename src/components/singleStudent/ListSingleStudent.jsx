@@ -16,7 +16,7 @@ function ListSingleStudent({ student }) {
   const [selectedCollege, setSelectedCollege] = useState("");
   //gets the campus name string from the campus reducer 
   const campusName = useSelector((state) => state.campuses.campusName);
-    const availableColleges = useSelector(
+  const availableColleges = useSelector(
       (state) => state.campuses.allCampus
     );
 
@@ -39,9 +39,9 @@ function ListSingleStudent({ student }) {
   const handleEnroll = () => {
     console.log("Selected College:", selectedCollege);
     dispatch(enrollStudentThunk(student.id, selectedCollege));
-    console.log("student id: ", student.id)
+    console.log("student id: ", student.id);
     console.log("campus id: ", student.campusId);
-    dispatch(fetchCampusNameThunk(student.campusId));
+    dispatch(fetchCampusNameThunk(selectedCollege));
   };
 
     useEffect(() => {
@@ -86,9 +86,9 @@ function ListSingleStudent({ student }) {
               onChange={(e) => setSelectedCollege(e.target.value)}
             >
               <option value="">Select College</option>
-              {availableColleges.map((college) => (
-                <option key={college.id} value={college.id}>
-                  {college.name}
+              {availableColleges.map((campus) => (
+                <option key={campus.id} value={campus.id}>
+                  {campus.name}
                 </option>
               ))}
             </select>
@@ -99,6 +99,7 @@ function ListSingleStudent({ student }) {
             Campus Name: {campusName}
           </Link>
         )}
+       {console.log(selectedCollege)}
       </div>
     </div>
   );

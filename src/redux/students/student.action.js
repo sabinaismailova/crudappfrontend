@@ -149,6 +149,8 @@ export const enrollStudentThunk = (studentId, campusId ) => {
       );
       dispatch(enrollStudent(studentId, campusId));
       console.log("Student enrolled successfully!");
+      console.log("Student ID  ENROLLTHUNK: ", studentId);
+      console.log("Campus ID  ENROLLTHUNK: ", campusId);
     } catch (error) {
       console.error(error);
     }
