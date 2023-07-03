@@ -26,12 +26,19 @@ function EditStudent() {
   const handleEditSubmit = (event) => {
     event.preventDefault();
     console.log("RUNNING DISPATCH FROM EDITSTUDENTTHUNK");
-    dispatch(editStudentThunk(editForm));
+
+    const updatedForm = { ...editForm };
+    if (!updatedForm.campusId || updatedForm.campusId === "") {
+      updatedForm.campusId = null;
+    }
+
+    dispatch(editStudentThunk(updatedForm));
     navigate(`/students/${student.id}`);
   };
 
   return (
     <div className="forms">
+      <h1 className={"header"}>Edit Student</h1>
       <form onSubmit={handleEditSubmit}>
         <label>First Name: </label>
         <input
@@ -63,8 +70,8 @@ function EditStudent() {
         />
         <label>GPA:</label>
         <input
-           type="number"
-           step="0.01"
+          type="number"
+          step="0.01"
           name="gpa"
           min="0"
           max="4"

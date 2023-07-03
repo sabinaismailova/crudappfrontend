@@ -47,7 +47,9 @@ function ListAllCampuses({ campus }) {
                     Delete
                 </button>
 
-                <Link to={`/campuses/edit/${campus.id}`} className="campus_link">Edit</Link>
+                <Link to={`/campuses/edit/${campus.id}`} className="campus_link">
+                    <button className="campus_edit">Edit</button>
+                </Link>
             </div>
 
 

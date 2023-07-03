@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from "../../components/footer/Footer";
 import "./Home.css";
@@ -18,7 +17,9 @@ function Home() {
         <p class="sentence">
           The system allows you to view, add, and delete the data
         </p>
-        <img src={homeImage} alt="Home" />
+        <div className="image-container">
+          <img src={homeImage} alt="Home" />
+        </div>
       </div>
 
       {

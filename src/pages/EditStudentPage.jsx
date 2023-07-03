@@ -17,7 +17,6 @@ function EditStudentPage() {
   return (
     <div>
       <Navbar />
-      <h1>Edit Student</h1>
       <EditStudent />
       <Footer />
     </div>

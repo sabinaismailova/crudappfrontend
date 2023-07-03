@@ -19,15 +19,14 @@ function Campuses() {
 
   useEffect(() => {
     console.log('FETECH ALL CAMPUSES FIRING IN USE EFFECT');
-
     fetechAllCampuses();
-  }, []);
+  },[]);
 
   return (
     <div className="campus_page">
       <Navbar />
-      <div className='all_campus_header'>
-        <h1>All Campuses List</h1>
+      <div>
+        <h1 className='all_campus_header'>All Campuses List</h1>
       </div>
       <div className='campus_add'>
         <Link to="/campuses/add">

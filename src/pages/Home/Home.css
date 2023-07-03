@@ -38,3 +38,14 @@
   margin-left: 8px;
 }
 
+.image-container {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}

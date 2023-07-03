@@ -33,13 +33,6 @@
   margin-bottom: 4px;
 }
 
-.student-actions {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  margin-left: 60px;
-}
-
 .edit-link,
 .delete-button {
   padding: 8px 16px;
@@ -53,7 +46,7 @@
 }
 
 .delete-button {
-  background-color: #f44336;
+  background-color: rgba(151, 42, 42, 0.9);
 }
 
 .student-campus {

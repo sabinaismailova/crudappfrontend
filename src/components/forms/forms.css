@@ -1,6 +1,7 @@
 .forms{
     text-align: center;
     margin-bottom: 5%;
+    font-family:Verdana;
 }
 
 form {
@@ -33,6 +34,16 @@ label{
 .submitbtn{
     width: 40%;
     margin: auto;
+    margin-top: 16px;
     border-radius: 2em;
     height: 3em;
+    font-family:Verdana;
+}
+
+.submitbtn:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+.header{
+    text-align: center;
 }
