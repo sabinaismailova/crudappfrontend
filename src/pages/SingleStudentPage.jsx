@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleStudentThunk } from "../redux/students/student.action";
 import ListSingleStudent from "../components/singleStudent/ListSingleStudent";
@@ -18,18 +18,18 @@ function SingleStudentPage() {
   //gets the dynamic ':id' dynamic param from the route path 
   const { id } = useParams();
 
-  //dispatches the fetchSingleStudentThunk() from student actions with the current student 'id' value from params
-  const fetchSingleStudent = () => {
-    console.log("RUNNING DISPATCH FROM FETCHSINGLESTUDENT");
-    return dispatch(fetchSingleStudentThunk(id));
-  };
 
   //run the fetchSingleStudent() function from above every time the id param changes 
   //every time the user clicks a student from students page, this function runs and gets that student's info
   useEffect(() => {
     console.log("FETCHING SINGLE STUDENT IN USE EFFECT");
+    //dispatches the fetchSingleStudentThunk() from student actions with the current student 'id' value from params
+    const fetchSingleStudent = () => {
+      console.log("RUNNING DISPATCH FROM FETCHSINGLESTUDENT");
+      return dispatch(fetchSingleStudentThunk(id));
+    };
     fetchSingleStudent();
-  },[id]);
+  },[id, dispatch]);
 
   console.log("Id: " , id);
   //renders the navbar and footer with their components
