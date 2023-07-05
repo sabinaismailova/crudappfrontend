@@ -27,7 +27,7 @@ function Campuses() {
     <div className="campus_page">
       <Navbar />
       <div className="campuses-page-header">
-        <h1 className='all_campus_header'>All Campuses List</h1>
+        <h1 className='all_campus_header'>All Campuses</h1>
         <Link to="/campuses/add">
           <button className='add_Campus_Button'>
             Add Campus
