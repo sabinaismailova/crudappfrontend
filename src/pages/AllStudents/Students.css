@@ -23,12 +23,6 @@
     margin:16px;
 }
 
-@media screen and (max-width: 600px) {
-    .students-page-header{
-        justify-content: center;
-    }
-}
-
 /* CSS */
 .add-btn {
   background-color: #efefef;
@@ -71,4 +65,14 @@
     position: absolute;
     top:80px;
     right:24px;
+}
+
+@media screen and (max-width: 600px) {
+  .students-page-header{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .add-btn{
+    margin-top: 16px;
+  }
 }

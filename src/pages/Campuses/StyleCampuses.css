@@ -47,7 +47,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2em;
 }
 
 .campuses-page-header{
@@ -61,6 +60,10 @@
 @media screen and (max-width: 600px) {
     .campuses-page-header{
         justify-content: center;
+        flex-direction: column;
+    }
+    .add_Campus_Button{
+        margin-top: 16px;
     }
 }
 
