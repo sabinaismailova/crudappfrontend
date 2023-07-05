@@ -26,10 +26,8 @@ function Campuses() {
   return (
     <div className="campus_page">
       <Navbar />
-      <div>
+      <div className="campuses-page-header">
         <h1 className='all_campus_header'>All Campuses List</h1>
-      </div>
-      <div className='campus_add'>
         <Link to="/campuses/add">
           <button className='add_Campus_Button'>
             Add Campus
