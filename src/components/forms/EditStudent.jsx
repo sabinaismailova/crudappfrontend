@@ -14,7 +14,7 @@ function EditStudent() {
   useEffect(() => {
     console.log("EDIT STUDENT FIRING IN USE EFFECT");
     setEditForm(student);
-  }, []);
+  }, [student]);
 
   const handleInputChange = (event) => {
     setEditForm({
