@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const AddCampus = ({ onSubmit }) => {
   const navigate = useNavigate();
   //default image for the campus
+  // const defaultImageUrl = "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/288/2019/03/19223634/Image-Coming-Soon-Placeholder.png";
   //newcampus: hold the campus info, setnewcampus:use to set the valuse of the  new campus
   const [newCampus, setnewCampus] = useState({
     // name: "",
