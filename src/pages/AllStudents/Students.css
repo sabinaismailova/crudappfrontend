@@ -12,7 +12,21 @@
     font-size:32px;
     color: #333333;
     text-shadow: 2px 2px 5px #5555558e;
-    margin:20px;
+    margin:0 auto;
+}
+
+.students-page-header{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    margin:16px;
+}
+
+@media screen and (max-width: 600px) {
+    .students-page-header{
+        justify-content: center;
+    }
 }
 
 /* CSS */
@@ -34,7 +48,7 @@
   font-family:Verdana;
   width: auto;
   height: 40px;
-  font-size: 18px;
+  font-size: auto;
 }
 
 .add-btn:hover {
