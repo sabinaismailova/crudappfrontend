@@ -7,10 +7,10 @@ const AddCampus = ({ onSubmit }) => {
   const defaultImageUrl = "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/288/2019/03/19223634/Image-Coming-Soon-Placeholder.png";
   //newcampus: hold the campus info, setnewcampus:use to set the valuse of the  new campus
   const [newCampus, setnewCampus] = useState({
-    name: "",
-    address: "",
-    description: "",
-    imageUrl: defaultImageUrl,
+    // name: "",
+    // address: "",
+    // description: "",
+    // imageUrl: defaultImageUrl,
   });
   //change the value of the newCampus, this also use to handle the text field chgange
   const HandleInputChange = (event) => {
@@ -62,7 +62,8 @@ const AddCampus = ({ onSubmit }) => {
         />
 
         <label>Description:</label>
-        <textarea
+        <input
+          type="text"
           name="description"
           value={newCampus.description}
           onChange={HandleInputChange}
