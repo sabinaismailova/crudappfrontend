@@ -46,7 +46,7 @@ function ListSingleCampus({ campus, students }) {
             </div>
             <div className="all_students_header">
 
-                <h2>Show All Students in Campus:</h2>
+                <h2 style={{marginRight:"20px"}}>Students</h2>
                 <Link to="/students/add">
                     <button className="add_student_button">Add Student</button>
                 </Link>

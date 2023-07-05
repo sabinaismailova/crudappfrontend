@@ -35,10 +35,6 @@ function ListAllCampuses({ campus }) {
                     <h4><b>{campus.name}</b></h4>
                 </div>
 
-                <div className="campus_description_div">
-                    <p>{campus.description}</p>
-                </div>
-
                 <div className="campus_address_div">
                     <p>{campus.address}</p>
                 </div>
