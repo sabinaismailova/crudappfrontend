@@ -32,8 +32,9 @@ function EditStudent() {
       updatedForm.campusId = null;
     }
 
-    dispatch(editStudentThunk(updatedForm));
-    navigate(`/students/${student.id}`);
+    dispatch(editStudentThunk(updatedForm)).then(() => {
+      navigate(`/students/${student.id}`);
+    });
   };
 
   return (
