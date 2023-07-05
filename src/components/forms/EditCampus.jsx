@@ -73,9 +73,10 @@ const EditCampus = () => {
           onChange={HandleInputChange}
         />
         <label>Description:</label>
-        <textarea
+        <input
+          type="text"
           name="description"
-          value={editForm.description || ""}
+          value={editForm.description}
           onChange={HandleInputChange}
         />
         <button className="submitbtn" type="submit">
