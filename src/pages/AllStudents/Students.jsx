@@ -35,13 +35,11 @@ function Students() {
   return (
     <div>
       <Navbar />
-      <div style={{display:"block"}}>
-        <h1 class="header">All Students</h1>
-        <div class="position-right">
-          <Link to="/students/add"><button class="add-btn">Add Student</button></Link>
-        </div>
+      <div className="students-page-header">
+        <h1 className="header">All Students</h1>
+        <Link to="/students/add"><button class="add-btn">Add Student</button></Link>
       </div>
-      <div class="container">
+      <div className="container">
         {allstudents.length>0 ? allstudents.map(student =>(
           <ListAllStudents key={student.id} student={student} />
         )) : <p>There are no students registered in the database!</p>
