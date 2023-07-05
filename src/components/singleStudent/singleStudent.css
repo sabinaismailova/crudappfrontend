@@ -71,3 +71,32 @@
 .student-campus a:hover {
   background-color: #f2f2f2;
 }
+
+.student-campus h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.student-campus select {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 36px;
+}
+
+.student-campus button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.student-campus button:hover {
+  background-color: #555;
+}

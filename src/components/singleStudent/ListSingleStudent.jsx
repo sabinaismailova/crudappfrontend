@@ -81,18 +81,22 @@ function ListSingleStudent({ student }) {
       <div className="student-campus">
         {student.campusId === null ? (
           <>
-            <h3>No registered college yet</h3>
-            <select
-              value={selectedCollege}
-              onChange={(e) => setSelectedCollege(e.target.value)}
-            >
-              <option value="">Select College</option>
-              {availableColleges.map((campus) => (
-                <option key={campus.id} value={campus.id}>
-                  {campus.name}
-                </option>
-              ))}
-            </select>
+            <div>
+              <h3>No registered a college yet: </h3>
+            </div>
+            <div>
+              <select
+                value={selectedCollege}
+                onChange={(e) => setSelectedCollege(e.target.value)}
+              >
+                <option value="">Select College</option>
+                {availableColleges.map((campus) => (
+                  <option key={campus.id} value={campus.id}>
+                    {campus.name}
+                  </option>
+                ))}
+              </select>
+            </div>
             <button onClick={handleEnroll}>Enroll</button>
           </>
         ) : (
@@ -100,7 +104,7 @@ function ListSingleStudent({ student }) {
             Campus Name: {campusName}
           </Link>
         )}
-       {console.log(selectedCollege)}
+        {console.log(selectedCollege)}
       </div>
     </div>
   );
