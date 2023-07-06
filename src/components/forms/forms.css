@@ -17,7 +17,7 @@ form {
 
 }
 
-input, textarea{
+input, textarea, form select{
     width: 80%;
     margin: auto;
     margin-bottom: 1em;
@@ -44,6 +44,11 @@ label{
     background-color: rgb(255, 255, 255);
 }
 
-.header{
-    text-align: center;
+.form-header{
+    text-align:center;
+    font-family:Verdana;
+    font-size:32px;
+    color: #333333;
+    text-shadow: 2px 2px 5px #5555558e;
+    margin-top: 16px;
 }
