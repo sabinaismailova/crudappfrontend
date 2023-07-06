@@ -79,16 +79,18 @@
 }
 
 .student-campus select {
-  margin-top: 10px;
+  margin-top: 8px;
   padding: 5px;
   font-size: 14px;
-  margin-right: 10px;
+  margin-right: 20px;
   border-radius: 5px;
+  border: 2px solid #ccc;
   height: 36px;
+  width: 100%;
 }
 
 .student-campus button {
-  margin-top: 10px;
+  margin-top: -5px;
   padding: 8px 12px;
   background-color: #333;
   color: #fff;
