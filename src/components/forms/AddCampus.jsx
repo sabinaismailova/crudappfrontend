@@ -55,7 +55,7 @@ const AddCampus = ({ onSubmit }) => {
 
         <label>Image URL:</label>
         <input
-          type="text"
+          type="url"
           name="imageUrl"
           value={newCampus.imageUrl}
           onChange={HandleInputChange}
