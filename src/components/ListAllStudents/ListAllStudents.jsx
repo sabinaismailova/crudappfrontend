@@ -22,17 +22,17 @@ function ListAllStudents({student}) {
   //edit is linked to the student edit form page and 'x' refers to the handleDelete func on click 
   return (
     <div>
-      <div class="card">
-        <Link to={`./${student.id}`} class="text">
-          <div class="img-div">
-            <img class="fit" src={student.imageUrl} alt="student_img"/>
+      <div className="card">
+        <Link to={`./${student.id}`} className="text">
+          <div className="img-div">
+            <img className="fit" src={student.imageUrl} alt="student_img"/>
           </div>
-          <div class="card-font">
+          <div className="card-font">
               <h4><b>{student.firstName} {student.lastName}</b></h4>
           </div>
         </Link>
-        <button class="del-btn" onClick={handleDelete}>Delete</button>
-        <Link to={`/students/edit/${student.id}`} class="text">
+        <button className="del-btn" onClick={handleDelete}>Delete</button>
+        <Link to={`/students/edit/${student.id}`} className="text">
           <button className="edit-btn">Edit</button>
         </Link>
       </div>
