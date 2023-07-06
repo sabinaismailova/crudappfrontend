@@ -33,7 +33,7 @@ const AddCampus = ({ onSubmit }) => {
      * handleinput change func will get the input to creat the object for the newCampus
      */
     <div className="forms">
-      <h1 className="header">Campus Info</h1>
+      <h1 className="form-header">Campus Info</h1>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
         <input

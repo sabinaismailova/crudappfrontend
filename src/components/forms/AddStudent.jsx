@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetechAllCampusesThunk } from "../../redux/campus/campus.action";
 import "./forms.css";
 //used to render the add student form on add student page
 function AddStudent({ onSubmit }) {
-  //a local object that has all the values needed to add a student to the backend database 
-  const [newStudent, setNewStudent] = useState({
-    // firstName: "",
-    // lastName: "",
-    // email: "",
-    // // imageUrl: "",
-    // gpa: 0,
-    // campusId: null,
-  });
+  //const containing all existing campuses in database
+  const availableColleges = useSelector((state) => state.campuses.allCampus);
+  const dispatch = useDispatch();
+  //a local object that stores all the values needed to add a student to the backend database
+  //populated by user add student form  
+  const [newStudent, setNewStudent] = useState({});
+
+  //gets all the campuses 
+  useEffect(() => {
+    dispatch(fetechAllCampusesThunk());
+  }, [dispatch]);
 
   //handle change func used to set the new student obj values based on user input in the form
   //spreads already existing newStudent obj data to the set new student to maintain the data from previous user input 
@@ -32,10 +36,11 @@ function AddStudent({ onSubmit }) {
   };
 
   //renders the add studen form and stores user input by calling handleInputChange and handleSubmit functions 
-  //img url is set to the default user img and will remain the same unless user changes the img url 
+  //img url is set to the default user img and will remain the same unless user changes the img url
+  //students can be added with no campus selected and no GPA
   return (
     <div className="forms">
-      <h1 className="header">Student Info</h1>
+      <h1 className="form-header">Student Info</h1>
       <form onSubmit={handleSubmit}>
         <label>First Name:</label>{" "}
         <input
@@ -78,13 +83,25 @@ function AddStudent({ onSubmit }) {
           max="4"
           onChange={handleInputChange}
         />
-        <label>Campus ID:</label>{" "}
-        <input
+        <label>Campus: </label>{" "}
+        <select
+          name="campusId"
+          value={newStudent.campusId || ""}
+          onChange={handleInputChange}
+        >
+          <option key={0} value="">Select College</option>
+          {availableColleges.map((campus) => (
+          <option key={campus.id} value={campus.id}>
+            {campus.name}
+          </option>
+          ))}
+        </select>
+        {/* <input
           type="number"
           name="campusId"
           value={newStudent.campusId}
           onChange={handleInputChange}
-        />
+        /> */}
         <button className="submitbtn" type="submit">
           Add Student
         </button>
