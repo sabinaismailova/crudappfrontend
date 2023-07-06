@@ -76,7 +76,7 @@ function ListSingleCampus({ campus, students }) {
           </div>
         </div>
         <div className="all_students_header">
-          <h2 style={{ marginRight: "20px" }}>Students</h2>
+          <h2 style={{ marginRight: "20px" }}>Students on Campus</h2>
           <>
             <select
               value={selectedStudent}
