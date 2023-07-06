@@ -31,10 +31,12 @@ function ListAllStudents({student}) {
               <h4><b>{student.firstName} {student.lastName}</b></h4>
           </div>
         </Link>
-        <button className="del-btn" onClick={handleDelete}>Delete</button>
-        <Link to={`/students/edit/${student.id}`} className="text">
-          <button className="edit-btn">Edit</button>
-        </Link>
+        <div className="btns-container">
+          <button className="del-btn" onClick={handleDelete}>Delete</button>
+          <Link to={`/students/edit/${student.id}`} className="text">
+            <button className="edit-btn">Edit</button>
+          </Link>
+        </div>
       </div>
     </div>
   )

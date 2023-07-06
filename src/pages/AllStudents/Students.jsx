@@ -42,7 +42,7 @@ function Students() {
       <div className="container">
         {allstudents.length>0 ? allstudents.map(student =>(
           <ListAllStudents key={student.id} student={student} />
-        )) : <p>There are no students registered in the database!</p>
+        )) : <p style={{textAlign:"center"}}>There are no students registered in the database!</p>
         }
       </div>
       <Footer />
