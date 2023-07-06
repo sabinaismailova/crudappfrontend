@@ -17,8 +17,17 @@ form {
 
 }
 
-input, textarea, form select{
+input, textarea, form {
     width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    padding: 0.625em;
+    border: 2px;
+}
+
+select{
+    width: 81%;
     margin: auto;
     margin-bottom: 1em;
     border-radius: 0.5em;
