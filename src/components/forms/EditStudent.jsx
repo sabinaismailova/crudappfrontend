@@ -54,16 +54,16 @@ function EditStudent() {
           value={editForm.lastName || ""}
           onChange={handleInputChange}
         />
-        <label>Email:</label>
+        <label for="email">Email:</label>
         <input
-          type="text"
+          type="email"
           name="email"
           value={editForm.email || ""}
           onChange={handleInputChange}
         />
         <label>Image URL:</label>
         <input
-          type="text"
+          type="url"
           name="imageUrl"
           value={editForm.imageUrl || ""}
           onChange={handleInputChange}

@@ -53,9 +53,9 @@ function AddStudent({ onSubmit }) {
           onChange={handleInputChange}
           required
         />
-        <label>Email:</label>{" "}
+        <label for="email">Email:</label>{" "}
         <input
-          type="text"
+          type="email"
           name="email"
           value={newStudent.email}
           onChange={handleInputChange}
@@ -63,7 +63,7 @@ function AddStudent({ onSubmit }) {
         />
         <label>Image URL:</label>{" "}
         <input
-          type="text"
+          type="url"
           name="imageUrl"
           value={newStudent.imageUrl}
           onChange={handleInputChange}

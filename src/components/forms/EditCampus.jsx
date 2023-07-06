@@ -67,7 +67,7 @@ const EditCampus = () => {
         />
         <label>Image URL: </label>
         <input
-          type="text"
+          type="url"
           name="imageUrl"
           value={editForm.imageUrl || ""}
           onChange={HandleInputChange}
